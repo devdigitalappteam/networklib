@@ -50,7 +50,7 @@ NetworkLib uses a number of open source projects to work properly:
 
 - Add this in your build.gradle
             	
-        implementation 'com.devdigital:networklib:1.0.0'
+        implementation 'com.devdigital:networklib:1.6.4'
         
 
 - Then initialize it in onCreate() Method of application class :
@@ -58,11 +58,11 @@ NetworkLib uses a number of open source projects to work properly:
         1. Then initialize it in onCreate() Method of application class :
 
 		//If Fast Android Networking Stack is used.
-		NetworkController.initAndroidNetworking(this);
-		
-        //Set WebService Handler class to handle WebService Response, Where WebResponseHandler is custom Response handler class in app module.
-        //WebResponseHandler must extends {@link BaseWebResponseHandler} class
-        NetworkController.setWebResponseHandler(new WebResponseHandler());
+		NetworkController.initAndroidNetworking(this, BuildConfig.DEBUG);
+
+		//Set WebService Handler class to handle WebService Response, Where WebResponseHandler is custom Response handler class in app module.
+		//WebResponseHandler must extends {@link BaseWebResponseHandler} class
+		NetworkController.setWebResponseHandler(WebResponseHandler.class);
 	
 	
 - Extra Classes needs to be added:
